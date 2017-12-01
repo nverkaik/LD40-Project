@@ -1,2 +1,3 @@
-# LD40-Project
-Ludum Dare 40 project.
+# Ludum Dare #40 project
+This will be our game for Ludum Dare 40. 
+https://ldjam.com/
