@@ -1,0 +1,4 @@
+sceneSetups:
+- path: D:/Documents/LD40-Project/fighting system/Assets/test.unity
+  isLoaded: 1
+  isActive: 1
