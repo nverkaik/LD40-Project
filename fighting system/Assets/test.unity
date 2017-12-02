@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 642537556}
   m_Layer: 0
-  m_Name: arrowspawn
+  m_Name: arrowSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,12 +403,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0746b12dfd901489f620f400167bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordDelay: 0.5
+  bowDelay: 0.2
   arrow: {fileID: 1539731158338972, guid: 45c44f5202ad69a4c8c417c59a1aa5c3, type: 2}
-  arrowspawn: {fileID: 642537556}
+  arrowSpawn: {fileID: 642537556}
   sword: {fileID: 734062105}
-  swordswing: {fileID: 1294783948}
+  swordSwing: {fileID: 1294783948}
   bow: {fileID: 1635589093}
-  fighttype: 0
+  fightType: 0
 --- !u!1 &1635589093 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1124412232496134, guid: 7d4cb58b428aaa9458f9cc569f6f5429,
