@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHPControll : MonoBehaviour {
+public class EnemyHPController : MonoBehaviour {
 
     public Slider EnemyHPSlider;
     public int EnemyHP;
@@ -28,7 +28,7 @@ public class EnemyHPControll : MonoBehaviour {
     {
         if (other.tag.Contains("Player"))
         {
-            EnemyHP -= other.gameObject.GetComponent<DamageControll>().damage;
+            EnemyHP -= other.gameObject.GetComponent<DamageController>().damage;
             if (other.tag.Contains("Arrow"))
             {
                 other.tag = "Useless";

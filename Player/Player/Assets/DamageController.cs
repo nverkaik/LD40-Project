@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageControll : MonoBehaviour {
+public class DamageController : MonoBehaviour {
 
     public int damage;
 
