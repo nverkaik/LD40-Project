@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GUIController : MonoBehaviour {
+public class GUIControll : MonoBehaviour {
 
     public Image SwordIMG;
     public Image BowIMG;

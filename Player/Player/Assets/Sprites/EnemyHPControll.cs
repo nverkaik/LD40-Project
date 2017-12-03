@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHPController : MonoBehaviour {
+public class EnemyHPControll : MonoBehaviour {
 
     public Slider EnemyHPSlider;
     public int EnemyHP;
@@ -22,13 +22,21 @@ public class EnemyHPController : MonoBehaviour {
         EnemyHPSlider.value = EnemyHP;
         EnemyHPSlider.maxValue = EnemyMaxHP;
         canvas.position = transform.position;
+        if (EnemyHP == EnemyMaxHP)
+        {
+            EnemyHPSlider.gameObject.SetActive(false);
+        }
+        else
+        {
+            EnemyHPSlider.gameObject.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Contains("Player"))
         {
-            EnemyHP -= other.gameObject.GetComponent<DamageController>().damage;
+            EnemyHP -= other.gameObject.GetComponent<DamageControll>().damage;
             if (other.tag.Contains("Arrow"))
             {
                 other.tag = "Useless";
@@ -37,6 +45,7 @@ public class EnemyHPController : MonoBehaviour {
 
                 //Destroy(other.gameObject);
             }
+            
             if (EnemyHP <=0)
             {
                 Destroy(canvas.gameObject);

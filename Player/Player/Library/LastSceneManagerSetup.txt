@@ -1,4 +1,10 @@
 sceneSetups:
-- path: Assets/test.unity
+- path: Assets/Demo/Demo.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Demo/DemoStartScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/test.unity
+  isLoaded: 0
+  isActive: 0

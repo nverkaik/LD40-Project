@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class ShooterController : MonoBehaviour
+{
 
     public Transform Player;
     public float Speed;
@@ -11,17 +12,18 @@ public class EnemyController : MonoBehaviour {
     public float RotationSpeed;
     public GameObject Arrow;
     public float ArrowSpeed;
-    public bool Walking;
     public Transform ShootingPoint;
     public float ShootngTimer;
     float timer;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (timer <= 0)
         {
             timer = ShootngTimer;
@@ -37,8 +39,8 @@ public class EnemyController : MonoBehaviour {
             Vector3 targetDir = Player.position - transform.position;
             float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 40);
-            if (distance < ShootRange && Walking == false)
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, RotationSpeed);
+            if (distance < ShootRange)
             {
                 if (timer <= 0)
                 {
@@ -46,10 +48,12 @@ public class EnemyController : MonoBehaviour {
                     newArrow.GetComponent<Rigidbody2D>().velocity = transform.up * ArrowSpeed;
                     Destroy(newArrow, 4f);
                 }
+                transform.parent.GetComponent<Rigidbody2D>().isKinematic = true;
             }
             else
             {
-                transform.Translate(Vector3.up * Time.deltaTime * Speed);
+                transform.parent.transform.Translate(transform.up * Time.deltaTime * Speed);
+                transform.parent.GetComponent<Rigidbody2D>().isKinematic = false;
             }
         }
         if (timer <= 0)
