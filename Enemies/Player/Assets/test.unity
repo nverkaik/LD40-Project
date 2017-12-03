@@ -269,3 +269,4 @@ MonoBehaviour:
   swordSwing: {fileID: 0}
   bow: {fileID: 0}
   fightType: 0
+  ArrowSpeed: 0

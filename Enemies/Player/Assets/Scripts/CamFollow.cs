@@ -27,6 +27,6 @@ public class CamFollow : MonoBehaviour
         if (target == null)
             return;
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3((target.position.x < xMax && target.position.x > xMin) ? target.position.x : transform.position.x, (target.position.y < yMax && target.position.y > yMin) ? target.position.y : transform.position.y, -10), cameraSpeed);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, -10), cameraSpeed);
     }
 }
