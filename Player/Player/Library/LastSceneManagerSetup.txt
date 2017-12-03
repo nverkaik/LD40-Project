@@ -5,3 +5,6 @@ sceneSetups:
 - path: Assets/Demo/DemoStartScene.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/test.unity
+  isLoaded: 0
+  isActive: 0
